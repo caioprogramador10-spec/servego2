@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070706">
+  <title>Sem conexão · ServeGo</title>
+  <style>
+    :root { color-scheme: light dark; --bg: #f7f4ef; --text: #17130e; --muted: #5c544b; --gold: #f0ae0a; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #070706; --text: #f7f4f0; --muted: #aaa29a; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100dvh; display: grid; place-items: center; padding: 24px;
+      background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; text-align: center; }
+    img { width: 72px; height: 72px; }
+    h1 { font-size: 1.6rem; margin: 18px 0 6px; letter-spacing: -0.02em; }
+    p { margin: 0 auto 22px; max-width: 320px; color: var(--muted); }
+    button { min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; font: 600 16px system-ui, sans-serif;
+      color: #1a1205; background: linear-gradient(140deg, #ffd25a, var(--gold)); cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="assets/logo-mark.svg" alt="ServeGo">
+    <h1>Você está sem internet</h1>
+    <p>Confira o Wi-Fi ou os dados móveis. Assim que a conexão voltar, o ServeGo continua de onde parou.</p>
+    <button onclick="location.reload()">Tentar de novo</button>
+  </main>
+  <script>window.addEventListener("online", function () { location.reload(); });</script>
+</body>
+</html>

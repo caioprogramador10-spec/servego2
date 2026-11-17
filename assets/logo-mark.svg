@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="ServeGo">
+  <defs>
+    <linearGradient id="sgTile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#26272a"/>
+      <stop offset="1" stop-color="#0b0b0c"/>
+    </linearGradient>
+    <!-- userSpaceOnUse: funciona também em linhas retas (caixa sem altura) -->
+    <linearGradient id="sgGold" gradientUnits="userSpaceOnUse" x1="0" y1="120" x2="0" y2="430">
+      <stop offset="0" stop-color="#ffd23a"/>
+      <stop offset="1" stop-color="#f2a100"/>
+    </linearGradient>
+    <linearGradient id="sgWhite" gradientUnits="userSpaceOnUse" x1="0" y1="120" x2="0" y2="310">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dedede"/>
+    </linearGradient>
+    <!-- ponta de cima do "S" cortada em diagonal, como na marca original -->
+    <clipPath id="sgCut">
+      <polygon points="0,0 448,0 448,96 386,222 512,222 512,512 0,512"/>
+    </clipPath>
+  </defs>
+
+  <!-- placa: quadrado arredondado, reto e centralizado -->
+  <rect width="512" height="512" rx="116" fill="url(#sgTile)"/>
+  <rect x="3" y="3" width="506" height="506" rx="113" fill="none" stroke="#ffffff" stroke-opacity=".10" stroke-width="6"/>
+
+  <g transform="translate(24 -18)">
+    <!-- linhas de velocidade -->
+    <g stroke="url(#sgGold)" stroke-width="30" stroke-linecap="round">
+      <line x1="96" y1="236" x2="150" y2="236"/>
+      <line x1="54" y1="300" x2="156" y2="300"/>
+      <line x1="96" y1="364" x2="138" y2="364"/>
+    </g>
+
+    <!-- "S": metade de cima branca, metade de baixo dourada -->
+    <path d="M424 160 H268 A57 57 0 0 0 268 274 H292" clip-path="url(#sgCut)"
+          fill="none" stroke="url(#sgWhite)" stroke-width="68"/>
+    <path d="M292 274 H318 A57 57 0 0 1 318 388 H166"
+          fill="none" stroke="url(#sgGold)" stroke-width="68"/>
+    <!-- corte diagonal entre as duas metades -->
+    <line x1="279" y1="310" x2="305" y2="238" stroke="#18181a" stroke-width="10"/>
+  </g>
+</svg>
